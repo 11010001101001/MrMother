@@ -1,6 +1,7 @@
 # GITHUB configuration
 GIT_HUB_TOKEN = 'your token'
 HEADERS = {'Authorization': f'Bearer {GIT_HUB_TOKEN}'}
+# Enter your project pulls url, like below, but instead of +project dir+ smth like /project/test/,
 PRS_URL = 'https://api.github.com/repos/+project dir+/pulls'
 
 # devs in format: {'github_nick_name': '@telegram_nick_name'}
@@ -11,6 +12,7 @@ DEVELOPERS = {
 
 # GITLAB configuration
 headers = {'PRIVATE-TOKEN': 'your token'}
+# Enter your project number
 project_number = 11111111
 opened_merge_requests_url = f'https://gitlab.com/api/v4/projects/{project_number}/merge_requests?state=opened'
 merge_requests_url = f'https://gitlab.com/api/v4/projects/{project_number}/merge_requests/'
@@ -28,21 +30,24 @@ required_approves_count = 3
 work_days_count = 5
 work_days = list(range(work_days_count))
 
-# Change to switch between Copy bot and MrMother bot:
+# Create bots for production telegram chat and for test chat:
+# change to switch between Copy bot and MrMother bot:
 debug_mode_is_on = False
 sound_is_on = True
 
-# copy bot for testing
+# enter your copy bot token for testing
 api_copy_bot_token = 'api_copy_bot_token'
-# another bot for production
+# enter your production bot token
 api_mr_mother_bot_token = 'api_mr_mother_bot_token'
-
+# enter test chat id
 dev_copy_chat_id = -1111111111111
+# enter production chat id
 dev_ios_internal_chat_id = -1111111111111
 
 api_bot_token = api_copy_bot_token if debug_mode_is_on else api_mr_mother_bot_token
 dev_chat_id = dev_copy_chat_id if debug_mode_is_on else dev_ios_internal_chat_id
 
+# Enter pr messages schedule time
 schedule = {
     '10:00',
     '13:00',
@@ -50,6 +55,7 @@ schedule = {
     '17:30',
 }
 
+# Enter everyday team daily call time notification
 daily_schedule = {
     0: '16:00',
     1: '16:00',
